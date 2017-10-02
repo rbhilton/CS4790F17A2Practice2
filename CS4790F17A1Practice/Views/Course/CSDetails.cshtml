@@ -9,42 +9,55 @@
 <div>
     <h4>Course Detail</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.course.courseNumber)
-        </dt>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.course.courseNumber)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.course.courseNumber)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.course.courseNumber)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.course.courseName)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.course.courseName)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.course.courseName)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.course.courseName)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.course.creditHours)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.course.creditHours)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.course.creditHours)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.course.creditHours)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.course.maxEnrollment)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.course.maxEnrollment)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.course.maxEnrollment)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.course.maxEnrollment)
+                    </dd>
 
-    </dl>
+                </dl>
+            </div> <!-- Details column -->
+            <div class="col-md-6" id="partialEditCourse" name="partialEditCourse">
+                
+            </div>
+            <div class="col-md-2">
+
+            </div>
+        </div> <!-- Bootstrap row -->
+    </div> <!-- Bootstrap container -->
 </div>
 <p>
+    @Ajax.ActionLink("Edit Course Inline","PartialEdit",new { id = Model.course.Id },new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "partialEditCourse" }) |
     @Html.ActionLink("Edit", "Edit", new { id = Model.course.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

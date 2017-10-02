@@ -134,6 +134,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BasicStudent.cs" />
+    <Compile Include="Models\CodeHolder.cs" />
     <Compile Include="Models\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -166,6 +167,8 @@
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -201,6 +204,7 @@
     <Content Include="Views\Section\Edit.cshtml" />
     <Content Include="Views\Section\Index.cshtml" />
     <Content Include="Views\Course\CSDetails.cshtml" />
+    <Content Include="Views\Course\PartialEdit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

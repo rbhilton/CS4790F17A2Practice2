@@ -130,6 +130,33 @@ namespace CS4790F17A2Practice.Controllers
             return RedirectToAction("Index");
         }
 
+        // GET: Courses/Edit/5
+        public PartialViewResult PartialEdit(int? id)
+        {
+            if (id == null)
+            {
+                ViewBag.partialResult = "nullId";
+            }
+            Course course = db.courses.Find(id);
+            if (course == null)
+            {
+                ViewBag.partialResult = "nullCourse";
+            }
+            return PartialView(course);
+        }
+
+        [HttpPost]
+        public ActionResult PartialEdit(Course course)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(course).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("CSDetails",course.Id);
+            }
+            return View("Index");
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
