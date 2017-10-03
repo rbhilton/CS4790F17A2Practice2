@@ -205,6 +205,7 @@
     <Content Include="Views\Section\Index.cshtml" />
     <Content Include="Views\Course\CSDetails.cshtml" />
     <Content Include="Views\Course\PartialEdit.cshtml" />
+    <Content Include="Views\Course\DetailsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

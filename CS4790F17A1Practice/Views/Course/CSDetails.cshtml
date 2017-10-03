@@ -11,41 +11,8 @@
     <hr />
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <dl class="dl-horizontal">
-                    <dt>
-                        @Html.DisplayNameFor(model => model.course.courseNumber)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.course.courseNumber)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.course.courseName)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.course.courseName)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.course.creditHours)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.course.creditHours)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.course.maxEnrollment)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.course.maxEnrollment)
-                    </dd>
-
-                </dl>
+            <div class="col-md-4" id="courseDetails">
+               @Html.Partial("DetailsPartial")
             </div> <!-- Details column -->
             <div class="col-md-6" id="partialEditCourse" name="partialEditCourse">
                 
