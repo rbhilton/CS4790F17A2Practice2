@@ -36,8 +36,9 @@ namespace CS4790F17A2Practice.Controllers
         }
 
         // GET: Sections/Create
-        public ActionResult Create()
+        public ActionResult Create(string courseNumber)
         {
+            ViewBag.courseNumber = courseNumber;
             return View();
         }
 
@@ -46,16 +47,23 @@ namespace CS4790F17A2Practice.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,sectionID,sectionNumber,courseNumber,sectionDays,sectionTime")] Section section)
+        public ActionResult Create(Section section, String sectionAction)
         {
             if (ModelState.IsValid)
             {
                 db.sections.Add(section);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                if (sectionAction == "fromDetails")
+                {
+                    return RedirectToAction("CSDetails", "Course");
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
             }
 
-            return View(section);
+            return View();
         }
 
         // GET: Sections/Edit/5

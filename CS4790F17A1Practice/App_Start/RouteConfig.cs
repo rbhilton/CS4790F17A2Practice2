@@ -16,7 +16,7 @@ namespace CS4790F17A2Practice
             routes.MapRoute(
                 name: "Test",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Course", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Course", action = "CSDetails", id = 1 }
             );
 
             routes.MapRoute(
