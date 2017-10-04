@@ -8,11 +8,9 @@
     -->
 @using (Html.BeginForm())
 {
-                @Html.AntiForgeryToken()
+   @Html.AntiForgeryToken()
 
-                <div class="form-horizontal">
-        <h4>Partial Edit</h4>
-        <hr />
+   <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
 
@@ -55,24 +53,13 @@
         </div>
     </div>
 }
+<a href='javascript:getView();'>Get Partial View</a>
 
-<!--
-    ------------ Doable, but bad -------------
-    function getServerTime() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/Home/ServerTime", true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4) {
-            if (xhr.status == "200") {
-                var timeDiv = document.getElementById("timeDisplay");
-                timeDiv.innerHTML = xhr.responseText;
-            }
-        }
-    }
-    xhr.send();
-}
-
--->
+<script type="text/javascript">
+    function getView() {
+         $('#divResult').load("@Url.Action("GetView" , "Home" )");
+     }
+</script>
 
 
 

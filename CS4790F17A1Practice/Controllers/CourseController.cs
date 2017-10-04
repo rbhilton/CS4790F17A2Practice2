@@ -131,6 +131,7 @@ namespace CS4790F17A2Practice.Controllers
         }
 
         // GET: Courses/Edit/5
+        [ChildActionOnly]
         public PartialViewResult PartialEdit(int? id)
         {
             if (id == null)

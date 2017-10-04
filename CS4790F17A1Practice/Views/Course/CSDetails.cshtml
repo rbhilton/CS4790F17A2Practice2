@@ -12,7 +12,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4" id="courseDetails">
-               @Html.Partial("DetailsPartial")
+               @Html.Partial("DetailsPartial",Model)
+               @{/*Html.RenderPartial("DetailsPartial");*/} 
             </div> <!-- Details column -->
             <div class="col-md-6" id="partialEditCourse" name="partialEditCourse">
                 
